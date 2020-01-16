@@ -1,0 +1,10 @@
+plat 1;15
+plat 2;17
+plat 3;18
+plat 4;19
+plat 5;20
+plat 6;21
+plat 7;22
+plat 8;23
+plat 9;24
+plat 10;25
