@@ -8,9 +8,13 @@ import dev.ihm.options.OptionTerminer;
 import dev.service.IPlatService;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+@Controller
 public class Menu {
 
     private Map<Integer, IOptionMenu> actions = new HashMap<>();
@@ -18,11 +22,18 @@ public class Menu {
     private String menu;
     private Scanner scanner;
 
-    public Menu(Scanner scanner, IPlatService service) {
-        actions.put(1, new OptionListerPlats(service));
-        actions.put(2, new OptionAjouterPlat(scanner, service));
-        actions.put(99, new OptionTerminer());
-        this.scanner = scanner;
+    public Menu(Scanner scanner, @Qualifier
+    		("platServiceVersion2")IPlatService service, List<IOptionMenu> option) {
+        int key=1;
+    	for (IOptionMenu iOptionMenu : option) {
+			if(iOptionMenu.isTerminate()){
+				actions.put(99, iOptionMenu);
+			}else{
+        	actions.put(key, iOptionMenu);
+			key++;
+			}
+		}
+    	this.scanner = scanner;
     }
 
     public void afficher() {

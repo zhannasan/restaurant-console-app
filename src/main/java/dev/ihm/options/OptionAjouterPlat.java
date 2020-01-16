@@ -5,12 +5,15 @@ import dev.service.IPlatService;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+@Component
 public class OptionAjouterPlat implements IOptionMenu {
     private Scanner scanner;
 
     private IPlatService service;
 
-    public OptionAjouterPlat(Scanner scanner, IPlatService service) {
+    public OptionAjouterPlat(Scanner scanner, @Qualifier("platServiceVersion2")IPlatService service) {
         this.scanner = scanner;
         this.service = service;
     }

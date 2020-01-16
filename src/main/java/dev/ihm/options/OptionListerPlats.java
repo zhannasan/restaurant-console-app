@@ -1,12 +1,15 @@
 package dev.ihm.options;
 
-import dev.service.IPlatService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+import dev.service.IPlatService;
+@Component
 public class OptionListerPlats implements IOptionMenu {
 
     private IPlatService service;
 
-    public OptionListerPlats(IPlatService service) {
+    public OptionListerPlats(@Qualifier("platServiceVersion2")IPlatService service) {
         this.service = service;
     }
 
