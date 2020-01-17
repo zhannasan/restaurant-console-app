@@ -13,10 +13,10 @@ import javax.persistence.Table;
 @Table(name="plat")
 public class Plat {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "nom", length = 50)
+	@Column(name = "nom")
     private String nom;
 	
 	@Column(name = "prixEnCentimesEuros")
