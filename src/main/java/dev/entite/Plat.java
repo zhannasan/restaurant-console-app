@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Plat {
 
+	private int id;
     private String nom;
     private Integer prixEnCentimesEuros;
 
@@ -33,7 +34,22 @@ public class Plat {
         this.prixEnCentimesEuros = prixEnCentimesEuros;
     }
 
-    @Override
+    
+    /**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
