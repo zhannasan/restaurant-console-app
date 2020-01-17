@@ -2,12 +2,24 @@ package dev.entite;
 
 import java.util.Objects;
 
-import org.springframework.stereotype.Component;
-@Component
-public class Plat {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="plat")
+public class Plat {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@Column(name = "nom", length = 50)
     private String nom;
+	
+	@Column(name = "prixEnCentimesEuros")
     private Integer prixEnCentimesEuros;
 
     public Plat() {

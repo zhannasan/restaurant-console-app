@@ -10,10 +10,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import dev.entite.Plat;
-@Repository
+
 public class PlatDaoJdbc implements IPlatDao{
 	
-//	private List<Plat> plats = new ArrayList<>();
 	private JdbcTemplate jdbcTemplate;
 	
 	@Autowired // injection de la source de données

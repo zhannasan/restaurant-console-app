@@ -1,7 +1,5 @@
 package dev;
 
-import java.sql.DriverManager;
-
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -10,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
-public class DataSourceMySqlConfig {
+public class DataSourceMariaDBConfig {
 
 	@Bean
 	public DataSource dataSource(){
@@ -18,8 +16,8 @@ public class DataSourceMySqlConfig {
 		dataSource.setDriverClassName("org.mariadb.jdbc.Driver");
 		dataSource.setUrl("jdbc:mariadb://localhost:3306/restaurant-bdd");
 		dataSource.setUsername("root");
-		return dataSource;
 		
+		return dataSource;
 	}
 	
 }
